@@ -3,12 +3,12 @@ const bearerKey = {
   method: 'GET',
   headers: {
     accept: 'application/json',
-    Authorization: 'Bearer DIN_API_KEY_HÄR'
-  }
+    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiOWNmODYxYmJkYjMwNWE4NWUzNDhkZjk5NTU1NDY0MyIsIm5iZiI6MTc2NTgwNTM5MS4xNjcsInN1YiI6IjY5NDAwZDRmNzAxZWNiMDA1OGY3OGQzMiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.6VMjQ2WP9XIEwIjpY6bEucL4iFvyaPpcZ68q3-k9nvA' }
+  
 };
 
 // Fetch: Top Rated
-async function getData() {
+export async function getData() {
   try {
     const response = await fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1', bearerKey);
     if (!response.ok) throw 'NETWORK ERROR, TRY AGAIN';
@@ -21,7 +21,7 @@ async function getData() {
 }
 
 // Fetch: Most Popular
-async function getPopularMovies() {
+export async function getPopularMovies() {
   try {
     const response = await fetch('https://api.themoviedb.org/3/movie/popular?language=en-US&page=1', bearerKey);
     if (!response.ok) throw 'NETWORK ERROR, TRY AGAIN';
@@ -34,7 +34,7 @@ async function getPopularMovies() {
 }
 
 // Fetch: Sök film
-async function searchMovie(query) {
+export async function searchMovie(query) {
   try {
     const response = await fetch(`https://api.themoviedb.org/3/search/movie?query=${encodeURIComponent(query)}&language=en-US&page=1`, bearerKey);
     if (!response.ok) throw 'Check your spelling';
@@ -47,7 +47,7 @@ async function searchMovie(query) {
 }
 
 // Fetch: Sök person
-async function searchPerson(query) {
+export async function searchPerson(query) {
   try {
     const response = await fetch(`https://api.themoviedb.org/3/search/person?query=${encodeURIComponent(query)}&language=en-US&page=1`, bearerKey);
     if (!response.ok) throw 'Check your spelling';
@@ -59,5 +59,3 @@ async function searchPerson(query) {
   }
 }
 
-
-export{getData,getPopularMovies,searchMovie,searchPerson}

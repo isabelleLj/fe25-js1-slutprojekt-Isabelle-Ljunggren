@@ -4,7 +4,7 @@ function movieURL(movie) {
 }
 
 // Skapa filmkort
-function createMovieCard(data, containerId) {
+export function createMovieCard(data, containerId) {
   const container = document.getElementById(containerId);
   container.innerHTML = '';
 
@@ -40,8 +40,9 @@ function createMovieCard(data, containerId) {
 }
 
 // Skapa personkort
-function createPersonCards(data) {
-  searchContainer.innerHTML = '';
+export function createPersonCards(data, containerId) {
+  const container = document.getElementById(containerId);
+  container.innerHTML = '';
   const wrapper = document.createElement('div');
   wrapper.classList.add('movie-wrapper');
 
@@ -77,6 +78,5 @@ function createPersonCards(data) {
     wrapper.appendChild(card);
   });
 
-  searchContainer.appendChild(wrapper);
+  container.appendChild(wrapper);
 }
-export{movieURL, createMovieCard, createPersonCards}
