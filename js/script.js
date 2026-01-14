@@ -72,6 +72,15 @@ document.getElementById('searchPersonBtn').addEventListener('click', () => {
   performSearch();
 });
 
+anime({
+  targets: '#header-title',
+  translateY: [-50, 0],
+  opacity: [0, 1],
+  duration: 1200,
+  easing: 'easeOutExpo'
+});
+
+
 
 
 

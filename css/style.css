@@ -4,7 +4,7 @@ body{
 }
 
 
-#main-header {
+#header-title {
   background-color: #1c1c1c;
   color: #fff;
   padding: 20px;
@@ -13,7 +13,7 @@ body{
   box-shadow: 0 2px 5px rgba(0,0,0,0.3);
 }
 
-#main-header h1 {
+#header-title h1 {
   margin: 0;
   font-size: 2.5rem;
   letter-spacing: 2px;
