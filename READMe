@@ -1,0 +1,5 @@
+I have built a movie-based web application for my Javascript 1 examination that uses The Movie Database (TMDB) API to fetch and display information about:
+⭐ Top-rated movies
+🔥 Popular movies
+🔍 Search results for movies
+👤 Search results for people (actors and directors)

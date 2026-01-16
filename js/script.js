@@ -27,32 +27,39 @@ async function performSearch() {
   errorElement.textContent = '';
 
   if (!query) return;
+}
 
   try {
     if (searchType === 'movie') {
       const data = await searchMovie(query);
+
       if (!data || data.length === 0) {
         errorElement.textContent = `No movies found for "${query}".`;
         searchContainer.innerHTML = '';
         return;
       }
+
       createMovieCard(data, 'search-result-container');
 
     } else if (searchType === 'person') {
       const data = await searchPerson(query);
+
       if (!data || data.length === 0) {
         errorElement.textContent = `No persons found for "${query}".`;
         searchContainer.innerHTML = '';
         return;
       }
+
       createPersonCards(data, 'search-result-container');
     }
-  } catch (error) {
+
+    }  catch (error) {
     console.error(error);
     errorElement.textContent = 'Check your spelling';
     searchContainer.innerHTML = '';
   }
-}
+
+
 
 // Event listeners
 searchInput.addEventListener('keydown', (e) => {
