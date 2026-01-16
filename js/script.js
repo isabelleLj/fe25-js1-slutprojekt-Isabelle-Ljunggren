@@ -55,7 +55,7 @@ async function performSearch() {
     }
   } catch (error) {
     console.error(error);
-    errorElement.textContent = "Check your spelling";
+    errorElement.textContent = "Something went wrong";
     searchContainer.innerHTML = "";
   }
 }
