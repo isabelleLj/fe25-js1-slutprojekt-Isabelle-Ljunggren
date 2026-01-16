@@ -27,7 +27,7 @@ export async function getPopularMovies() {
     
      if (response.status === 404) {
        throw new Error('NOT FOUND');
-    }
+     }
     
     if (!response.ok) throw 'NETWORK ERROR, TRY AGAIN';
 
